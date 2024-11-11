@@ -19,7 +19,7 @@
 #include <Python.h>
 
 #include "util/crossplatform.h"
-#include "enum_traits.h"
+#include "python/mujoco/enum_traits.h"
 #include "util/tuple_tools.h"
 #include <pybind11/operators.h>
 #include <pybind11/pybind11.h>
@@ -43,7 +43,7 @@ inline T FloorDiv(T a, T b) {
 
 template <typename Trait>
 void DefEnum(py::module_& m) {
-  py::enum_<typename Trait::type> e(m, Trait::name);
+  py::enum_<typename Trait::type> e(m, Trait::name, py::module_local());
   for (const auto& [name, enumerator] : Trait::values) {
     e.value(name, enumerator);
   }
