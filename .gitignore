@@ -30,3 +30,8 @@ Info.framework.plist
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Bazel build artifacts (symlinks)
+/bazel-*
+
+.cache

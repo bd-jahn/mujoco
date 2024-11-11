@@ -36,11 +36,11 @@
 #include <utility>
 #include <vector>
 
-#include <absl/container/flat_hash_map.h>
+#include "absl/container/flat_hash_map.h"
 #include <mujoco/mjxmacro.h>
 #include <mujoco/mujoco.h>
 #include "errors.h"
-#include "function_traits.h"
+#include "python/mujoco/function_traits.h"
 #include "indexers.h"
 #include "private.h"
 #include "raw.h"
